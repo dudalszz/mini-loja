@@ -1,0 +1,16 @@
+.rating {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+}
+
+.ratingStars {
+  color: var(--color-rating);
+  font-size: 1.1rem;
+}
+
+.ratingValue {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}

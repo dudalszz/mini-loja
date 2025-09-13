@@ -1,0 +1,40 @@
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-border) 25%,
+    #e9ecef 50%,
+    var(--color-border) 75%
+  );
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: var(--border-radius);
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeletonImage {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.skeletonText {
+  height: 1rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.skeletonText:last-child {
+  margin-bottom: 0;
+  width: 60%;
+}
+
+.skeletonButton {
+  height: 2.25rem;
+  width: 100%;
+}
