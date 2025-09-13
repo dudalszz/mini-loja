@@ -1,6 +1,6 @@
 # 🛍️ Mini Loja – Atividade de Estilização em React
 
-Este projeto foi desenvolvido como parte da atividade de **Desenvolvimento Web**, com o objetivo de implementar a **mesma tela em quatro versões**, cada uma utilizando uma técnica de estilização diferente no React.
+Este projeto foi desenvolvido como parte da atividade de **Desenvolvimento Web** do curso da +praTi, com o objetivo de implementar a **mesma tela em quatro versões**, cada uma utilizando uma técnica de estilização diferente no React.
 
 ---
 
@@ -96,3 +96,18 @@ Foram exibidos **6 produtos**, cada um com:
 ---
 
 ## 📂 Organização de Pastas
+
+mini-loja/
+│
+├── 01-css-global/
+├── 02-css-modules/
+├── 03-tailwind/
+└── 04-styled-components/
+
+---
+
+## 📖 Sobre a Atividade
+
+Esta atividade teve como objetivo **comparar diferentes formas de estilização em projetos React**, entendendo prós e contras de cada abordagem e garantindo que a interface final fosse consistente em todas as versões.
+
+---
