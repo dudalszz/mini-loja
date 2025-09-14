@@ -9,7 +9,8 @@ const Nav = styled.nav`
   align-items: center;
   padding: ${(props) => props.theme.spacing.md}
     ${(props) => props.theme.spacing.lg};
-  background-color: ${(props) => props.theme.colors.bgSecondary};
+  background-color: ${(props) =>
+    props.theme.colors.bgPrimary}; /* fundo preto */
   box-shadow: ${(props) => props.theme.shadows.sm};
   position: sticky;
   top: 0;
@@ -102,7 +103,7 @@ const Navbar = () => {
 
   return (
     <Nav>
-      <Logo>Loja</Logo>
+      <Logo>Albums</Logo>
       <Actions>
         <ThemeButton
           onClick={toggleTheme}

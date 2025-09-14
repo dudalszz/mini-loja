@@ -1,33 +1,45 @@
 // components/Rating.jsx
 import React from "react";
+import styled from "styled-components";
+
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: ${(props) => props.theme.spacing.lg};
+`;
+
+const Stars = styled.div`
+  display: flex;
+  margin-right: ${(props) => props.theme.spacing.xs};
+  font-size: 1rem;
+`;
+
+const Star = styled.span`
+  color: ${(props) =>
+    props.filled ? props.theme.colors.rating : props.theme.colors.border};
+  margin-right: 0.125rem;
+`;
+
+const RatingText = styled.span`
+  font-size: 0.875rem;
+  color: ${(props) => props.theme.colors.textSecondary};
+`;
 
 const Rating = ({ value }) => {
   const fullStars = Math.floor(value);
   const hasHalfStar = value - fullStars >= 0.5;
-  const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
 
   return (
-    <div className="flex items-center mb-3">
-      <div className="flex mr-2 text-yellow-400 text-lg">
-        {[...Array(fullStars)].map((_, i) => (
-          <span key={`full-${i}`} className="mr-1">
+    <Container>
+      <Stars>
+        {[...Array(5)].map((_, i) => (
+          <Star key={i} filled={i < fullStars}>
             ★
-          </span>
+          </Star>
         ))}
-        {hasHalfStar && <span className="mr-1">★</span>}
-        {[...Array(emptyStars)].map((_, i) => (
-          <span
-            key={`empty-${i}`}
-            className="mr-1 text-gray-300 dark:text-gray-500"
-          >
-            ★
-          </span>
-        ))}
-      </div>
-      <span className="text-sm text-gray-600 dark:text-gray-400 font-medium">
-        ({value.toFixed(1)})
-      </span>
-    </div>
+      </Stars>
+      <RatingText>({value.toFixed(1)})</RatingText>
+    </Container>
   );
 };
 
