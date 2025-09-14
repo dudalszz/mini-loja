@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Loja K-pop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Configurar o Tailwind para usar modo escuro baseado em classe
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+    <style>
+      .btn-red-velvet {
+        background-color: #e21b1b !important;
+        color: white !important;
+      }
+      .btn-twice {
+        background-color: #1b4de2 !important;
+        color: white !important;
+      }
+      .btn-gidle {
+        background-color: #8a2be2 !important;
+        color: white !important;
+      }
+      .btn-aespa {
+        background-color: #ff1493 !important;
+        color: white !important;
+      }
+
+      .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      /* Garantir preto verdadeiro no modo escuro */
+      .dark {
+        background-color: #000000 !important;
+      }
+
+      .dark .bg-black {
+        background-color: #000000 !important;
+      }
+
+      .dark .border-gray-800 {
+        border-color: #1f2937 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
