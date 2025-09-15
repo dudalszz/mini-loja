@@ -8,11 +8,11 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="navbar-logo">Loja</div>
+      <div className="navbar-logo">ALBUMS</div>
       <div className="navbar-actions">
         <button
           className="theme-toggle"
-          onClick={toggleTheme} // ✅ Isso deve funcionar
+          onClick={toggleTheme}
           aria-label={`Mudar para tema ${isDark ? "claro" : "escuro"}`}
         >
           {isDark ? "☀️" : "🌙"}
