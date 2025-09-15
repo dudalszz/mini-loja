@@ -1,0 +1,140 @@
+.card {
+  background-color: var(--color-bg-secondary); /* troquei */
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 288px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 256px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--color-bg-secondary);
+}
+
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+}
+
+.tag {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background-color: #000000;
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  z-index: 10;
+}
+
+.content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.title {
+  font-weight: 400;
+  color: var(--color-text-primary);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.8rem;
+}
+
+.price {
+  font-weight: 700;
+  color: var(--color-text-primary);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.buttonContainer {
+  margin-top: auto;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Skeleton loading */
+.skeletonCard {
+  composes: card;
+  animation: pulse 2s infinite;
+}
+
+.skeletonImage {
+  width: 100%;
+  height: 256px;
+  background-color: var(--color-border);
+}
+
+.skeletonText {
+  height: 1rem;
+  background-color: var(--color-border);
+  border-radius: 0.375rem;
+  margin-bottom: 1rem;
+}
+
+.skeletonText:nth-child(1) {
+  width: 80%;
+}
+.skeletonText:nth-child(2) {
+  width: 60%;
+  height: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.skeletonText:nth-child(3) {
+  width: 40%;
+}
+
+.skeletonButton {
+  height: 2rem;
+  width: 70%;
+  background-color: var(--color-border);
+  border-radius: 0.375rem;
+  margin-top: 2rem;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

@@ -6,8 +6,24 @@
 }
 
 .ratingStars {
-  color: var(--color-rating);
+  display: flex;
   font-size: 1.1rem;
+  margin-right: 0.25rem;
+}
+
+.star {
+  margin-right: 0.125rem;
+  color: var(--color-border); /* padrão = estrela vazia */
+}
+
+.starFilled {
+  color: var(--color-rating); /* estrelas preenchidas */
+}
+
+.starHalf {
+  color: var(
+    --color-rating
+  ); /* meia estrela (se quiser pode trocar por ícone especial) */
 }
 
 .ratingValue {

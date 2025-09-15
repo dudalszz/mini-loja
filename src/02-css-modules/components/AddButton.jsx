@@ -1,19 +1,32 @@
+// components/AddButton.jsx
 import React from "react";
-import styles from "./Button.module.css";
+import styles from "./AddButton.module.css"; // ← Nome correto
 
 const AddButton = ({
-  variant = "solid",
   disabled = false,
   loading = false,
   onClick,
   children,
+  group,
 }) => {
-  const variantClass =
-    styles[`btn${variant.charAt(0).toUpperCase() + variant.slice(1)}`];
+  const getButtonClass = () => {
+    switch (group) {
+      case "Red Velvet":
+        return styles.redVelvet;
+      case "TWICE":
+        return styles.twice;
+      case "(G)I-DLE":
+        return styles.gidle;
+      case "aespa":
+        return styles.aespa;
+      default:
+        return styles.default;
+    }
+  };
 
   return (
     <button
-      className={`${styles.btn} ${variantClass}`}
+      className={getButtonClass()}
       disabled={disabled || loading}
       onClick={onClick}
       aria-busy={loading}

@@ -1,33 +1,42 @@
-.productsGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--spacing-lg);
-  padding: var(--spacing-lg);
-  max-width: 1200px;
-  margin: 0 auto;
+/* components/Cart.module.css */
+.container {
   min-height: 100vh;
+  background-color: var(--color-bg-primary); /* Preto puro */
+  padding-top: 6rem;
 }
 
-@media (min-width: 481px) {
+.title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 2rem;
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--color-bg-primary); /* Preto puro */
+}
+
+@media (min-width: 768px) {
   .productsGrid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1024px) {
   .productsGrid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1280px) {
   .productsGrid {
     grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .productsGrid {
-    padding: var(--spacing-md);
   }
 }

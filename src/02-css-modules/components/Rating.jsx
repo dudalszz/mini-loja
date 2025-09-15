@@ -9,9 +9,24 @@ const Rating = ({ value }) => {
   return (
     <div className={styles.rating}>
       <div className={styles.ratingStars}>
-        {"★".repeat(fullStars)}
-        {hasHalfStar ? "⭐" : ""}
-        {"☆".repeat(emptyStars)}
+        {[...Array(fullStars)].map((_, i) => (
+          <span
+            key={`full-${i}`}
+            className={`${styles.star} ${styles.starFilled}`}
+          >
+            ★
+          </span>
+        ))}
+
+        {hasHalfStar && (
+          <span className={`${styles.star} ${styles.starHalf}`}>★</span>
+        )}
+
+        {[...Array(emptyStars)].map((_, i) => (
+          <span key={`empty-${i}`} className={styles.star}>
+            ★
+          </span>
+        ))}
       </div>
       <span className={styles.ratingValue}>({value.toFixed(1)})</span>
     </div>

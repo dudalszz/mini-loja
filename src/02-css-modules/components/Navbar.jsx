@@ -1,3 +1,4 @@
+// components/Navbar.jsx
 import React from "react";
 import { useTheme } from "../../context/ThemeContext";
 import { useCart } from "../../context/CartContext";
@@ -5,11 +6,12 @@ import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   const { isDark, toggleTheme } = useTheme();
-  const { getCartItemsCount } = useCart();
+  const { cartItems } = useCart();
 
   return (
     <nav className={styles.navbar}>
-      <div className={styles.navbarLogo}>Loja</div>
+      <div className={styles.navbarLogo}>ALBUMS</div>
+
       <div className={styles.navbarActions}>
         <button
           className={styles.themeToggle}
@@ -18,9 +20,12 @@ const Navbar = () => {
         >
           {isDark ? "☀️" : "🌙"}
         </button>
-        <button className={styles.cartBadge} aria-label="Carrinho de compras">
+
+        <button className={styles.cartButton} aria-label="Carrinho de compras">
           🛒
-          <span className={styles.cartBadgeCount}>{getCartItemsCount()}</span>
+          {cartItems.length > 0 && (
+            <span className={styles.cartBadgeCount}>{cartItems.length}</span>
+          )}
         </button>
       </div>
     </nav>

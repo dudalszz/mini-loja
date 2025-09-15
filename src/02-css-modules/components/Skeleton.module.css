@@ -23,17 +23,14 @@
   width: 100%;
   aspect-ratio: 1 / 1;
 }
-
 .skeletonText {
   height: 1rem;
   margin-bottom: var(--spacing-sm);
 }
-
 .skeletonText:last-child {
   margin-bottom: 0;
   width: 60%;
 }
-
 .skeletonButton {
   height: 2.25rem;
   width: 100%;
