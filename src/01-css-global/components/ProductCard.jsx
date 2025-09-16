@@ -60,7 +60,7 @@ const ProductCard = ({ product, loading = false }) => {
         </div>
         <Rating value={product.rating} />
         <div className="product-card-footer">
-          <AddButton onClick={handleAddToCart} variant="solid">
+          <AddButton onClick={handleAddToCart} group={product.group}>
             Adicionar
           </AddButton>
         </div>

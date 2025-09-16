@@ -17,77 +17,58 @@ const ProductCard = ({ product, loading = false }) => {
 
   if (loading) {
     return (
-      <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden flex flex-col h-full animate-pulse w-72">
-        {" "}
-        {/* ↑ w-72 (288px) */}
-        <div className="w-full h-64 bg-gray-300 dark:bg-gray-600"></div>{" "}
-        {/* ↑ h-64 (256px) */}
+      <div className="bg-white dark:bg-neutral-900 rounded-lg border border-gray-200 dark:border-neutral-700 overflow-hidden flex flex-col h-full w-72 animate-pulse">
+        <div className="w-full h-64 bg-gray-300 dark:bg-neutral-700"></div>
         <div className="p-5 flex flex-col flex-grow">
-          {" "}
-          {/* ↑ p-5 */}
-          <div className="h-5 bg-gray-300 dark:bg-gray-600 rounded mb-3"></div>{" "}
-          {/* ↑ h-5 */}
-          <div className="h-6 bg-gray-300 dark:bg-gray-600 rounded mb-3"></div>{" "}
-          {/* ↑ h-6 */}
-          <div className="h-4 bg-gray-300 dark:bg-gray-600 rounded mb-4"></div>
-          <div className="h-10 bg-gray-300 dark:bg-gray-600 rounded mt-auto w-3/4"></div>
+          <div className="h-5 bg-gray-300 dark:bg-neutral-700 rounded mb-3"></div>
+          <div className="h-6 bg-gray-300 dark:bg-neutral-700 rounded mb-3"></div>
+          <div className="h-4 bg-gray-300 dark:bg-neutral-700 rounded mb-4"></div>
+          <div className="h-10 bg-gray-300 dark:bg-neutral-700 rounded mt-auto w-3/4"></div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="bg-white dark:bg-black rounded-lg border border-gray-200 dark:border-gray-800 overflow-hidden flex flex-col h-full w-72">
-      {" "}
-      {/* ↑ w-72 (288px) */}
+    <div className="bg-white dark:bg-neutral-900 rounded-lg border border-gray-200 dark:border-neutral-700 overflow-hidden flex flex-col h-full w-72">
+      {/* Imagem */}
       <div className="relative flex-grow">
         {!imageError ? (
-          <div
-            className="w-full h-64 flex items-center justify-center overflow-hidden" // ↑ h-64 (256px)
-            style={{ backgroundColor: isDark ? "#000000" : "#ffffff" }}
-          >
+          <div className="w-full h-64 flex items-center justify-center overflow-hidden bg-white dark:bg-neutral-800">
             <img
               src={product.image}
               alt={product.title}
               className="w-full h-full object-scale-down"
               onLoad={() => setImageLoaded(true)}
               onError={() => setImageError(true)}
+              style={{ display: imageLoaded ? "block" : "none" }}
             />
+            {!imageLoaded && (
+              <span className="text-sm text-gray-500 dark:text-neutral-400">
+                Carregando...
+              </span>
+            )}
           </div>
         ) : (
-          <div
-            className="w-full h-64 flex items-center justify-center" // ↑ h-64 (256px)
-            style={{ backgroundColor: isDark ? "#000000" : "#f3f4f6" }}
-          >
-            <span
-              className="text-sm"
-              style={{ color: isDark ? "#9ca3af" : "#6b7280" }}
-            >
+          <div className="w-full h-64 flex items-center justify-center bg-gray-100 dark:bg-neutral-800">
+            <span className="text-sm text-gray-500 dark:text-neutral-400">
               Imagem não disponível
             </span>
           </div>
         )}
 
         {product.tag && (
-          <span
-            className="absolute top-3 left-3 text-white text-sm px-3 py-1.5 rounded font-medium" // ↑ tamanho maior
-            style={{ backgroundColor: isDark ? "#374151" : "#000000" }}
-          >
+          <span className="absolute top-3 left-3 text-white text-sm px-3 py-1.5 rounded font-medium bg-black dark:bg-neutral-700">
             {product.tag}
           </span>
         )}
       </div>
+
       <div className="p-5 flex flex-col">
-        {" "}
-        {/* ↑ p-5 */}
-        <h3 className="font-normal text-gray-900 dark:text-gray-100 text-base mb-3 line-clamp-2 leading-tight">
-          {" "}
-          {/* ↑ text-base */}
+        <h3 className="font-normal text-gray-900 dark:text-neutral-100 text-base mb-3 line-clamp-2 leading-tight">
           {product.title}
         </h3>
-        <div className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">
-          {" "}
-          {/* ↑ text-xl */}
+        <div className="text-xl font-bold text-gray-900 dark:text-neutral-100 mb-3">
           {product.price.toLocaleString("pt-BR", {
             style: "currency",
             currency: "BRL",
@@ -95,7 +76,6 @@ const ProductCard = ({ product, loading = false }) => {
         </div>
         <Rating value={product.rating} isDark={isDark} />
         <div className="mt-4 flex justify-start">
-          {" "}
           <AddButton
             onClick={handleAddToCart}
             group={product.group}

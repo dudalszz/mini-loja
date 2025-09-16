@@ -7,7 +7,7 @@ import { useCart } from "../../context/CartContext";
 import { useTheme } from "../../context/ThemeContext";
 
 const Card = styled.div`
-  background-color: ${(props) => props.theme.colors.bgPrimary};
+  background-color: ${(props) => props.theme.colors.bgSecondary};
   border: 1px solid ${(props) => props.theme.colors.border};
   border-radius: ${(props) => props.theme.borderRadius.lg};
   overflow: hidden;
@@ -31,7 +31,7 @@ const ImageContainer = styled.div`
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-color: ${(props) => props.theme.colors.bgPrimary};
+  background-color: ${(props) => props.theme.colors.bgSecondary};
 `;
 
 const ProductImage = styled.img`

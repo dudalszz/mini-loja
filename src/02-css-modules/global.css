@@ -1,9 +1,8 @@
 :root {
-  /* 🎨 Cores - Light Theme */
+  /* Cores - Light Theme */
   --color-bg-primary: #ffffff;
   --color-bg-secondary: #f8f9fa;
-  --color-bg-tertiary: #000000;
-
+  --color-bg-tertiary: #ffffff;
   --color-text-primary: #212529;
   --color-text-secondary: #6c757d;
   --color-accent: #0d6efd;
@@ -13,19 +12,19 @@
   --color-danger: #dc3545;
   --color-rating: #fd7e14;
 
-  /* 📏 Espaçamento */
+  /* Espaçamento */
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 1.5rem;
   --spacing-xl: 2rem;
 
-  /* 🟦 Border radius */
+  /* Border radius */
   --border-radius: 0.375rem;
   --border-radius-md: 0.5rem;
   --border-radius-lg: 0.75rem;
 
-  /* 🌑 Shadows */
+  /* Shadows */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
@@ -33,23 +32,34 @@
 }
 
 [data-theme="dark"] {
-  /* 🌙 Modo escuro */
   --color-bg-primary: #000000;
   --color-bg-secondary: #111111;
   --color-bg-tertiary: #000000;
   --color-text-primary: #ffffff;
   --color-text-secondary: #a0a0a0;
   --color-border: #333333;
-
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.4);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4),
     0 4px 6px -2px rgba(0, 0, 0, 0.3);
 }
 
-/* Aplicar as cores globais */
+/* Estilos globais */
+html,
 body {
-  background-color: var(--color-bg-primary);
-  color: var(--color-text-primary);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: var(--color-bg-primary) !important;
+  color: var(--color-text-primary) !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#root {
+  background-color: var(--color-bg-primary) !important;
+  min-height: 100vh;
 }

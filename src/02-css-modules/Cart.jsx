@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import ProductCard from "./components/ProductCard";
 import { products } from "../data/products";
 import styles from "./Cart.module.css";
+import "./global.css";
 
 const Cart = () => {
   const [isLoading, setIsLoading] = useState(true);

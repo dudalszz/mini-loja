@@ -3,8 +3,13 @@ import { useTheme } from "../../context/ThemeContext";
 import { useCart } from "../../context/CartContext";
 
 const Navbar = () => {
-  const { isDark, toggleTheme } = useTheme();
   const { cartItems } = useCart();
+
+  const toggleTheme = () => {
+    const html = document.documentElement;
+    const currentTheme = html.getAttribute("data-theme");
+    html.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
+  };
 
   return (
     <nav className="navbar">
@@ -13,17 +18,19 @@ const Navbar = () => {
         <button
           className="theme-toggle"
           onClick={toggleTheme}
-          aria-label={`Mudar para tema ${isDark ? "claro" : "escuro"}`}
+          aria-label="Alternar tema"
         >
-          {isDark ? "☀️" : "🌙"}
+          {document.documentElement.getAttribute("data-theme") === "dark"
+            ? "☀️"
+            : "🌙"}
         </button>
 
-        <div className="cart-badge">
+        <button className="cart-button" aria-label="Carrinho de compras">
           🛒
           {cartItems.length > 0 && (
             <span className="cart-badge-count">{cartItems.length}</span>
           )}
-        </div>
+        </button>
       </div>
     </nav>
   );

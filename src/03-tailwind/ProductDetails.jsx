@@ -26,7 +26,7 @@ const ProductDetails = () => {
         sm:grid-cols-2
         md:grid-cols-3
         lg:grid-cols-4
-        xl:grid-cols-4 // ← Menos colunas para cards maiores
+        xl:grid-cols-4 
         sm:p-6
       "
       >

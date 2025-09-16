@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className="bg-white dark:bg-black shadow-md p-4 sticky top-0 z-50 border-b border-gray-200 dark:border-gray-800">
       <div className="flex justify-between items-center">
         <div className="font-bold text-xl text-gray-900 dark:text-gray-100">
-          Mini Loja K-pop
+          ALBUMS{" "}
         </div>
         <div className="flex items-center gap-4">
           <button

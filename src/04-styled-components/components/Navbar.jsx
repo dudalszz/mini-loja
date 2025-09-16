@@ -7,15 +7,21 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: ${(props) => props.theme.spacing.md}
-    ${(props) => props.theme.spacing.lg};
-  background-color: ${(props) =>
-    props.theme.colors.bgPrimary}; /* fundo preto */
-  box-shadow: ${(props) => props.theme.shadows.sm};
+  padding: 0.75rem 1.5rem;
+  background-color: ${(props) => props.theme.colors.bgPrimary};
+  color: ${(props) => props.theme.colors.textPrimary};
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 1px solid ${(props) => props.theme.colors.border};
+  min-height: 60px;
+  box-sizing: border-box;
+  margin: 0;
+  width: 100%;
+
+  /* Bordas top e bottom */
+  border-top: 2px solid ${(props) => props.theme.colors.border};
+  border-bottom: 2px solid ${(props) => props.theme.colors.border};
+  box-shadow: ${(props) => props.theme.shadows.sm};
 `;
 
 const Logo = styled.div`
@@ -103,7 +109,7 @@ const Navbar = () => {
 
   return (
     <Nav>
-      <Logo>Albums</Logo>
+      <Logo>ALBUMS</Logo>
       <Actions>
         <ThemeButton
           onClick={toggleTheme}

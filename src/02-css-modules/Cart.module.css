@@ -1,28 +1,20 @@
-/* components/Cart.module.css */
-.container {
+container {
   min-height: 100vh;
-  background-color: var(--color-bg-primary); /* Preto puro */
-  padding-top: 6rem;
-}
-
-.title {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--color-text-primary);
-  margin-bottom: 2rem;
+  background-color: var(--color-bg-primary); /* ← Preto do fundo */
+  padding-top: 5rem; /* Ajuste para a altura da navbar */
 }
 
 .productsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
-  gap: 1.5rem;
-  padding: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
   max-width: 1200px;
   margin: 0 auto;
-  background-color: var(--color-bg-primary); /* Preto puro */
+  background-color: transparent; /* ← Transparente para mostrar o fundo preto */
 }
 
+/* Media queries mantidos */
 @media (min-width: 768px) {
   .productsGrid {
     grid-template-columns: repeat(2, 1fr);

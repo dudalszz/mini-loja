@@ -6,9 +6,7 @@ import { products } from "../data/products";
 
 const Container = styled.div`
   min-height: 100vh;
-  background-color: ${(props) =>
-    props.theme.colors.bgPrimary}; /* fundo preto igual ao card */
-  padding-top: ${(props) => props.theme.spacing.xxl};
+  background-color: ${(props) => props.theme.colors.bgPrimary};
 `;
 
 const Title = styled.h1`

@@ -22,10 +22,10 @@ export const ThemeProvider = ({ children }) => {
     const html = document.documentElement;
     if (isDark) {
       html.classList.add("dark");
-      html.style.backgroundColor = "#000000";
+      html.setAttribute("data-theme", "dark");
     } else {
       html.classList.remove("dark");
-      html.style.backgroundColor = "";
+      html.removeAttribute("data-theme");
     }
     localStorage.setItem("theme", isDark ? "dark" : "light");
   }, [isDark]);

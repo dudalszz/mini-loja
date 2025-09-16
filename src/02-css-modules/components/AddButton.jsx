@@ -1,6 +1,5 @@
-// components/AddButton.jsx
 import React from "react";
-import styles from "./AddButton.module.css"; // ← Nome correto
+import styles from "./Button.module.css";
 
 const AddButton = ({
   disabled = false,
@@ -26,7 +25,7 @@ const AddButton = ({
 
   return (
     <button
-      className={getButtonClass()}
+      className={`${styles.button} ${getButtonClass()}`}
       disabled={disabled || loading}
       onClick={onClick}
       aria-busy={loading}
