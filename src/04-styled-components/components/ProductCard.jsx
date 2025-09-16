@@ -7,9 +7,9 @@ import { useCart } from "../../context/CartContext";
 import { useTheme } from "../../context/ThemeContext";
 
 const Card = styled.div`
-  background-color: ${(props) => props.theme.colors.bgSecondary};
-  border: 1px solid ${(props) => props.theme.colors.border};
-  border-radius: ${(props) => props.theme.borderRadius.lg};
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -32,12 +32,16 @@ const ImageContainer = styled.div`
   justify-content: center;
   overflow: hidden;
   background-color: ${(props) => props.theme.colors.bgSecondary};
+  border-top-left-radius: var(--border-radius-lg);
+  border-top-right-radius: var(--border-radius-lg);
 `;
 
 const ProductImage = styled.img`
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: scale-down;
+  display: block;
+  object-fit: cover;
 `;
 
 const Placeholder = styled.div`
@@ -53,15 +57,21 @@ const Placeholder = styled.div`
 
 const Tag = styled.span`
   position: absolute;
-  top: 0.75rem;
-  left: 0.75rem;
-  background-color: #000000;
+  top: 0.5rem;
+  left: 0.5rem;
   color: white;
   font-size: 0.75rem;
   padding: 0.25rem 0.5rem;
   border-radius: ${(props) => props.theme.borderRadius.default};
   font-weight: 500;
   z-index: 10;
+
+  background-color: ${(props) =>
+    props.tag?.toLowerCase() === "promo"
+      ? props.theme.colors.danger
+      : props.tag?.toLowerCase() === "novo"
+      ? props.theme.colors.success
+      : "#000"};
 `;
 
 const Content = styled.div`
@@ -130,7 +140,7 @@ const ProductCard = ({ product, loading = false }) => {
           <Placeholder>Imagem não disponível</Placeholder>
         )}
 
-        {product.tag && <Tag>{product.tag}</Tag>}
+        {product.tag && <Tag tag={product.tag}>{product.tag}</Tag>}
       </ImageContainer>
 
       <Content>
@@ -155,7 +165,6 @@ const ProductCard = ({ product, loading = false }) => {
   );
 };
 
-// Componente Skeleton para loading
 const SkeletonCard = styled(Card)`
   animation: pulse 2s infinite;
 

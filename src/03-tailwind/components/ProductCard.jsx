@@ -31,14 +31,13 @@ const ProductCard = ({ product, loading = false }) => {
 
   return (
     <div className="bg-white dark:bg-neutral-900 rounded-lg border border-gray-200 dark:border-neutral-700 overflow-hidden flex flex-col h-full w-72">
-      {/* Imagem */}
       <div className="relative flex-grow">
         {!imageError ? (
           <div className="w-full h-64 flex items-center justify-center overflow-hidden bg-white dark:bg-neutral-800">
             <img
               src={product.image}
               alt={product.title}
-              className="w-full h-full object-scale-down"
+              className="w-full h-full object-cover"
               onLoad={() => setImageLoaded(true)}
               onError={() => setImageError(true)}
               style={{ display: imageLoaded ? "block" : "none" }}
@@ -57,11 +56,17 @@ const ProductCard = ({ product, loading = false }) => {
           </div>
         )}
 
-        {product.tag && (
-          <span className="absolute top-3 left-3 text-white text-sm px-3 py-1.5 rounded font-medium bg-black dark:bg-neutral-700">
-            {product.tag}
-          </span>
-        )}
+        <span
+          className={`absolute top-3 left-3 text-white text-sm px-3 py-1.5 rounded font-medium ${
+            product.tag.toLowerCase() === "promo"
+              ? "bg-red-600 dark:bg-red-700"
+              : product.tag.toLowerCase() === "novo"
+              ? "bg-green-600 dark:bg-green-700"
+              : "bg-black dark:bg-neutral-00"
+          }`}
+        >
+          {product.tag}
+        </span>
       </div>
 
       <div className="p-5 flex flex-col">

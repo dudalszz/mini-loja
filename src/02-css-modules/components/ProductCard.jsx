@@ -1,7 +1,6 @@
-// components/ProductCard.jsx
 import React, { useState } from "react";
 import { useCart } from "../../context/CartContext";
-import styles from "./ProductCard.module.css"; // mantém o CSS do ProductCard ou CartItem adaptado
+import styles from "./ProductCard.module.css";
 import Rating from "./Rating";
 import AddButton from "./AddButton";
 

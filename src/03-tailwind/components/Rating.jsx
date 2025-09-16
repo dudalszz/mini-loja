@@ -1,4 +1,3 @@
-// components/Rating.jsx
 import React from "react";
 
 const Rating = ({ value, isDark }) => {
@@ -7,10 +6,8 @@ const Rating = ({ value, isDark }) => {
   return (
     <div className="flex items-center mb-4">
       {" "}
-      {/* ↑ mb-4 */}
       <div className="flex text-yellow-400 text-base mr-2">
         {" "}
-        {/* ↑ text-base e mr-2 */}
         {[...Array(5)].map((_, i) => (
           <span
             key={i}
@@ -31,7 +28,7 @@ const Rating = ({ value, isDark }) => {
         style={{ color: isDark ? "#9ca3af" : "#6b7280" }}
       >
         {" "}
-        {/* ↑ text-sm */}({value.toFixed(1)})
+        ({value.toFixed(1)})
       </span>
     </div>
   );

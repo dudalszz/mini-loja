@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import ProductCard from "./components/ProductCard";
+import Footer from "./components/Footer";
 import "./style.css";
 import { products } from "../data/products";
 
@@ -13,7 +14,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="page-container">
       <Navbar />
       <div className="products-grid">
         {isLoading
@@ -24,6 +25,7 @@ const Home = () => {
               <ProductCard key={product.id} product={product} />
             ))}
       </div>
+      <Footer />
     </div>
   );
 };

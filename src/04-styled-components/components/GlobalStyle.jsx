@@ -1,4 +1,3 @@
-// src/components/04-styled-components/GlobalStyles.jsx
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
@@ -20,7 +19,7 @@ const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
   }
 
-  /* Focus visible para acessibilidade */
+ 
   button:focus-visible,
   a:focus-visible {
     outline: 2px solid ${(props) => props.theme.colors.accent};

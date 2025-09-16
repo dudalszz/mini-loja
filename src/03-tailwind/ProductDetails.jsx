@@ -1,7 +1,7 @@
-// components/ProductDetails.jsx
 import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import ProductCard from "./components/ProductCard";
+import Footer from "./components/Footer";
 import { products } from "../data/products";
 
 const ProductDetails = () => {
@@ -16,13 +16,13 @@ const ProductDetails = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-black">
+    <div className="min-h-screen bg-gray-50 dark:bg-black flex flex-col">
       <Navbar />
 
       <div
         className="
         grid grid-cols-1 gap-6 p-6 
-        max-w-7xl mx-auto min-h-screen
+        max-w-7xl mx-auto flex-1
         sm:grid-cols-2
         md:grid-cols-3
         lg:grid-cols-4
@@ -38,6 +38,7 @@ const ProductDetails = () => {
               <ProductCard key={product.id} product={product} />
             ))}
       </div>
+      <Footer />
     </div>
   );
 };

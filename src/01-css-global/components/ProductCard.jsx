@@ -7,7 +7,14 @@ const ProductCard = ({ product, loading = false }) => {
 
   const handleAddToCart = () => {
     console.log("Produto adicionado:", product.title);
-    // Aqui você pode adicionar uma notificação ou feedback visual
+  };
+
+  const getTagClass = (tag) => {
+    if (!tag) return "";
+    const lower = tag.toLowerCase();
+    if (lower === "promo") return "promo";
+    if (lower === "novo") return "novo";
+    return "";
   };
 
   if (loading) {
@@ -35,30 +42,35 @@ const ProductCard = ({ product, loading = false }) => {
 
   return (
     <div className="product-card">
+      {/* Tag sempre visível */}
       {product.tag && (
         <span
-          className={`product-card-tag ${
-            product.tag.toLowerCase() === "promo" ? "promo" : ""
-          }`}
+          className={`product-card-tag ${getTagClass(product.tag)}`}
+          data-tag={product.tag}
         >
           {product.tag}
         </span>
       )}
+
       <img
         src={product.image}
         alt={product.title}
         className="product-card-image"
         onLoad={() => setImageLoaded(true)}
       />
+
       <div className="product-card-content">
         <h3 className="product-card-title">{product.title}</h3>
+
         <div className="product-card-price">
           {product.price.toLocaleString("pt-BR", {
             style: "currency",
             currency: "BRL",
           })}
         </div>
+
         <Rating value={product.rating} />
+
         <div className="product-card-footer">
           <AddButton onClick={handleAddToCart} group={product.group}>
             Adicionar

@@ -1,4 +1,3 @@
-// components/AddButton.jsx
 import React from "react";
 
 const AddButton = ({

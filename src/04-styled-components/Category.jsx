@@ -2,11 +2,14 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Navbar from "./components/Navbar";
 import ProductCard from "./components/ProductCard";
+import Footer from "./components/Footer";
 import { products } from "../data/products";
 
 const Container = styled.div`
   min-height: 100vh;
   background-color: ${(props) => props.theme.colors.bgPrimary};
+  display: flex;
+  flex-direction: column;
 `;
 
 const Title = styled.h1`
@@ -24,6 +27,7 @@ const ProductsGrid = styled.div`
   padding: ${(props) => props.theme.spacing.lg};
   max-width: 1200px;
   margin: 0 auto;
+  flex: 1;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
@@ -60,6 +64,7 @@ const Category = () => {
               <ProductCard key={product.id} product={product} />
             ))}
       </ProductsGrid>
+      <Footer />
     </Container>
   );
 };

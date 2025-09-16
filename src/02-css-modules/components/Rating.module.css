@@ -13,17 +13,15 @@
 
 .star {
   margin-right: 0.125rem;
-  color: var(--color-border); /* padrão = estrela vazia */
+  color: var(--color-border);
 }
 
 .starFilled {
-  color: var(--color-rating); /* estrelas preenchidas */
+  color: var(--color-rating);
 }
 
 .starHalf {
-  color: var(
-    --color-rating
-  ); /* meia estrela (se quiser pode trocar por ícone especial) */
+  color: var(--color-rating);
 }
 
 .ratingValue {

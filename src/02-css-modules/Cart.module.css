@@ -1,7 +1,8 @@
-container {
+.container {
   min-height: 100vh;
-  background-color: var(--color-bg-primary); /* ← Preto do fundo */
-  padding-top: 5rem; /* Ajuste para a altura da navbar */
+  background-color: var(--color-bg-primary);
+  display: flex;
+  flex-direction: column;
 }
 
 .productsGrid {
@@ -11,10 +12,9 @@ container {
   padding: var(--spacing-lg);
   max-width: 1200px;
   margin: 0 auto;
-  background-color: transparent; /* ← Transparente para mostrar o fundo preto */
+  background-color: transparent;
 }
 
-/* Media queries mantidos */
 @media (min-width: 768px) {
   .productsGrid {
     grid-template-columns: repeat(2, 1fr);
